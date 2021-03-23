@@ -145,20 +145,30 @@
 // interfaces
 
     interface Human {
-        age: number
+        readonly age: number
         walk(): void
     }
 
+    // if a prop is readonly it cannot be assigned again later
+
     interface Person3 extends Human {
         firstName: string
-        lastName: string
+        lastName?: string
     }
 
-    const user: Person3 = {
+    const user2: Person3 = {
         firstName: ``,
         lastName: ``,
         age: 30,
         walk: () => {
+            return
+        }
+    }
+
+    class Employee2 implements Person3 {
+        firstName = ``
+        age = 10
+        walk(): void {
             return
         }
     }
