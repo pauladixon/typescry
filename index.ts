@@ -141,5 +141,24 @@
     const manager: Person2 = new Employee(1, `paula`, `pattison`, `dixon`, 30)
     console.log(`${manager.getFullName()}`)
 
-    // or
 
+// interfaces
+
+    interface Human {
+        age: number
+        walk(): void
+    }
+
+    interface Person3 extends Human {
+        firstName: string
+        lastName: string
+    }
+
+    const user: Person3 = {
+        firstName: ``,
+        lastName: ``,
+        age: 30,
+        walk: () => {
+            return
+        }
+    }

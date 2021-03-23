@@ -117,4 +117,11 @@ var Employee = /** @class */ (function (_super) {
 }(Person2));
 var manager = new Employee(1, "paula", "pattison", "dixon", 30);
 console.log("" + manager.getFullName());
-// or
+var user = {
+    firstName: "",
+    lastName: "",
+    age: 30,
+    walk: function () {
+        return;
+    }
+};
