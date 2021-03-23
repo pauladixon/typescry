@@ -117,3 +117,25 @@
 
     const person2: Person2 = new Person2(`Paula`, `Dixon, 30`)
     console.log(person.getFullName())
+
+
+    class Employee extends Person2 {
+        constructor(
+            private id: number,
+            firstName: string, 
+            private middleName: string,
+            lastName: string,
+            age: number
+        ) {
+            super(firstName, lastName, age)
+        }
+
+        getFullName(): string {
+            const nameSegments: Array<string> = super.getFullName().split(' ')
+            nameSegments.splice(1,0,this.middleName)
+            return `${nameSegments[0]} ${nameSegments[1]} ${nameSegments[2]}`
+        }
+    }
+
+    const manager: Person2 = new Employee(1, `paula`, `pattison`, `dixon`, 30)
+    console.log(`${manager.getFullName()}`)
