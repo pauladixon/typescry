@@ -100,3 +100,20 @@
 
     const person: Person = new Person(`Paula`, `Dixon, 30`)
     console.log(person.getFullName())
+
+    // or
+
+    class Person2 {
+        constructor(
+            private firstName: string,
+            private lastName: string,
+            private age: number
+        ){}
+
+        getFullName(): string {
+            return `${this.firstName} ${this.lastName}`
+        }
+    }
+
+    const person2: Person2 = new Person2(`Paula`, `Dixon, 30`)
+    console.log(person.getFullName())

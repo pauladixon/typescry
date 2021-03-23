@@ -70,3 +70,17 @@ var Person = /** @class */ (function () {
 }());
 var person = new Person("Paula", "Dixon, 30");
 console.log(person.getFullName());
+// or
+var Person2 = /** @class */ (function () {
+    function Person2(firstName, lastName, age) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.age = age;
+    }
+    Person2.prototype.getFullName = function () {
+        return this.firstName + " " + this.lastName;
+    };
+    return Person2;
+}());
+var person2 = new Person2("Paula", "Dixon, 30");
+console.log(person.getFullName());
