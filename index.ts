@@ -52,10 +52,10 @@
 
 // if you're not ready to specify a type, you can use any
 
-    let authorizedUser: any {
-        firstName: 'paula',
-        lastName: 'dixon',
-    }
+    // let authorizedUser: any {
+    //     firstName: 'paula',
+    //     lastName: 'dixon',
+    // }
 
     // but this lacks intellisense as opposed to:
     
@@ -66,3 +66,37 @@
         firstName: 'paula',
         lastName: 'dixon'
     }
+
+
+// functions with spread
+
+    // where the ? makes an argument optional
+
+    function add(x?: number, y?: number, z?: number): number {
+        return x + y + z
+    }
+
+    let numbers: Array<number> = [1,2,3]
+
+    console.log(add(...numbers))
+
+// classes
+
+    class Person {
+        firstName: string
+        lastName: string
+        age: number
+
+        constructor(firstName: string, lastName: string, age: number){
+            this.firstName = firstName
+            this.lastName = lastName
+            this.age = age
+        }
+
+        getFullName(): string {
+            return `${this.firstName} ${this.lastName}`
+        }
+    }
+
+    const person: Person = new Person(`Paula`, `Dixon, 30`)
+    console.log(person.getFullName())

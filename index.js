@@ -40,9 +40,33 @@ var Continents;
 // usage
 var region = Continents.Africa;
 // if you're not ready to specify a type, you can use any
-var authorizedUser, _a = void 0,  = _a.firstName,  = _a["paula"],  = _a.lastName,  = _a["dixon"];
+// let authorizedUser: any {
+//     firstName: 'paula',
+//     lastName: 'dixon',
+// }
 // but this lacks intellisense as opposed to:
 var authorizedUser = {
     firstName: 'paula',
     lastName: 'dixon'
 };
+// functions with spread
+// where the ? makes an argument optional
+function add(x, y, z) {
+    return x + y + z;
+}
+var numbers = [1, 2, 3];
+console.log(add.apply(void 0, numbers));
+// classes
+var Person = /** @class */ (function () {
+    function Person(firstName, lastName, age) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.age = age;
+    }
+    Person.prototype.getFullName = function () {
+        return this.firstName + " " + this.lastName;
+    };
+    return Person;
+}());
+var person = new Person("Paula", "Dixon, 30");
+console.log(person.getFullName());
