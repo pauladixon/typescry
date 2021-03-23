@@ -105,9 +105,9 @@
 
     class Person2 {
         constructor(
-            private firstName: string,
-            private lastName: string,
-            private age: number
+            protected firstName: string,
+            protected lastName: string,
+            protected age: number
         ){}
 
         getFullName(): string {
@@ -131,11 +131,15 @@
         }
 
         getFullName(): string {
-            const nameSegments: Array<string> = super.getFullName().split(' ')
-            nameSegments.splice(1,0,this.middleName)
-            return `${nameSegments[0]} ${nameSegments[1]} ${nameSegments[2]}`
+            // const nameSegments: Array<string> = super.getFullName().split(' ')
+            // nameSegments.splice(1,0,this.middleName)
+            // return `${nameSegments[0]} ${nameSegments[1]} ${nameSegments[2]}`
+            return `${this.firstName} ${this.middleName} ${this.lastName}`
         }
     }
 
     const manager: Person2 = new Employee(1, `paula`, `pattison`, `dixon`, 30)
     console.log(`${manager.getFullName()}`)
+
+    // or
+

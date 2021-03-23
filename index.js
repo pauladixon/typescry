@@ -108,11 +108,13 @@ var Employee = /** @class */ (function (_super) {
         return _this;
     }
     Employee.prototype.getFullName = function () {
-        var nameSegments = _super.prototype.getFullName.call(this).split(' ');
-        nameSegments.splice(1, 0, this.middleName);
-        return nameSegments[0] + " " + nameSegments[1] + " " + nameSegments[2];
+        // const nameSegments: Array<string> = super.getFullName().split(' ')
+        // nameSegments.splice(1,0,this.middleName)
+        // return `${nameSegments[0]} ${nameSegments[1]} ${nameSegments[2]}`
+        return this.firstName + " " + this.middleName + " " + this.lastName;
     };
     return Employee;
 }(Person2));
 var manager = new Employee(1, "paula", "pattison", "dixon", 30);
 console.log("" + manager.getFullName());
+// or
